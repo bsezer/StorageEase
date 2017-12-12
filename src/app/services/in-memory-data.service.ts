@@ -1,4 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const heroes = [
@@ -15,51 +16,6 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 20, name: 'Tornado' }
     ];
 
-    var storageHouseOne = { 
-      id: 0,
-      type: 'House',
-      storageSpaces:  [ 
-        {
-          id: 0,
-          type: 'Garage',
-          width: '10 ft',
-          length: '10 ft',
-          name: 'Buraks Garage',
-          price: 100,
-        },
-        {
-          id: 1,
-          type: 'Room',
-          width: '16 ft',
-          length: '10 ft',
-          name: 'Buraks Garage',
-          price: 140,
-        }
-      ],
-      name: 'Buraks House'
-    }
-
-    var storageHouseTwo = { 
-      id: 0,
-      type: 'Apartment',
-      storageSpaces:  [ 
-        {
-          id: 0,
-          type: 'Rooom',
-          width: '10 ft',
-          length: '10 ft',
-          name: 'Armys Garage',
-          price: 50,
-        }
-      ],
-      name: 'Apartment Apartment'
-    }
-
-    const StorageHouses = [
-      storageHouseOne,
-      storageHouseTwo
-    ];
-    
     return {heroes};
   }
 }

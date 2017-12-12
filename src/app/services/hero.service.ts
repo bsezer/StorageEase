@@ -4,6 +4,10 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Hero } from '../shared/hero';
+import { StorageHouse } from '../shared/IStorageUnits';
+import { StorageHouses } from '../shared/sampleStorageUnits';
+import { JsonPipe } from '@angular/common/src/pipes';
+
 
 @Injectable()
 export class HeroService {
@@ -27,6 +31,26 @@ export class HeroService {
       .toPromise()
       .then(response => response.json().data as Hero)
       .catch(this.handleError);
+  }
+
+  getStorageHouse(id: number): Promise<StorageHouse> {
+    console.log('id: ' + id);
+    const url = `${this.heroesUrl}/${id}`;
+    var storageHouses : StorageHouse[] = StorageHouses;
+    return Promise.resolve(StorageHouses[id])    
+    // return this.http.get(url)
+    //   .toPromise()
+    //   .then(response => response.json().data as Hero)
+    //   .catch(this.handleError);
+  }
+
+  getStorageHouses(): Promise<StorageHouse[]> {
+    // const url = `${this.heroesUrl}/${id}`;
+    // return this.http.get(url)
+    //   .toPromise()
+    //   .then(response => response.json().data as Hero)
+    //   .catch(this.handleError);
+    return Promise.resolve(StorageHouses)
   }
 
   delete(id: number): Promise<void> {

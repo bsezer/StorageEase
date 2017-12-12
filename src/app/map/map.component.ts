@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Hero }        from '../shared/hero';
 import { HeroService } from '../services/hero.service';
+import { StorageSpace, StorageHouse, Owner } from '../shared/IStorageUnits'
+import { StorageHouses } from '../shared/sampleStorageUnits'
 
 @Component({
   selector: 'my-map',
@@ -9,12 +9,19 @@ import { HeroService } from '../services/hero.service';
   styleUrls: [ './map.component.css' ]
 })
 export class MapComponent implements OnInit {
-  heroes: Hero[] = [];
+  public storageHouses: StorageHouse[];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService) {
+    this.storageHouses = StorageHouses;
+  }
 
   ngOnInit(): void {
-    this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+    console.log('Map Component');
+    this.heroService.getStorageHouses()
+      .then(storageHouses =>{
+        this.storageHouses = storageHouses;
+      }
+    );
   }
 }
+

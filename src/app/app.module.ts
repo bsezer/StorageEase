@@ -13,6 +13,8 @@ import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
+import { StorageDetailComponent }  from './storage-detail/storage-detail.component';
+
 import { HeroService }          from './services/hero.service';
 import { HeroSearchComponent }  from './hero-search/hero-search.component';
 import { MapComponent }  from './map/map.component';
@@ -29,6 +31,7 @@ import { MapComponent }  from './map/map.component';
     AppComponent,
     DashboardComponent,
     HeroDetailComponent,
+    StorageDetailComponent,
     HeroesComponent,
     HeroSearchComponent,
     MapComponent
